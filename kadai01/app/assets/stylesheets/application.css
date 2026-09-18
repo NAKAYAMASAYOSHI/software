@@ -8,3 +8,111 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+/* ===== kadai01 発展課題: 装飾 ===== */
+body {
+  font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+  background-color: #f5f6f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  border-bottom: 3px solid #4a90d9;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+.flash {
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.flash-notice {
+  background-color: #e6f4ea;
+  color: #1e7e34;
+  border: 1px solid #b6e2c4;
+}
+.flash-alert {
+  background-color: #fdecea;
+  color: #c0392b;
+  border: 1px solid #f5c6cb;
+}
+
+.error-box {
+  background-color: #fdecea;
+  border: 1px solid #f5c6cb;
+  color: #c0392b;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.error-box ul {
+  margin: 8px 0 0 20px;
+}
+
+.book-table, .detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.book-table th, .book-table td,
+.detail-table th, .detail-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+}
+.book-table th {
+  background-color: #4a90d9;
+  color: #fff;
+}
+.detail-table th {
+  width: 120px;
+  background-color: #f0f0f0;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+.field label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.field input[type="text"] {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary { background-color: #4a90d9; color: #fff; }
+.btn-secondary { background-color: #ccc; color: #333; }
+.btn-danger { background-color: #e74c3c; color: #fff; }
+.btn-small { padding: 4px 10px; font-size: 13px; }
+
+.empty {
+  color: #888;
+  font-style: italic;
+}

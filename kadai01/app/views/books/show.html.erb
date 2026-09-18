@@ -1,16 +1,21 @@
-<p>
-  <strong>タイトル：</strong>
-  <%= @book.title %>
-</p>
+<h1>書籍詳細</h1>
+
+<table class="detail-table">
+  <tr>
+    <th>タイトル</th>
+    <td><%= @book.title %></td>
+  </tr>
+  <tr>
+    <th>著者</th>
+    <td><%= @book.author %></td>
+  </tr>
+  <tr>
+    <th>出版年</th>
+    <td><%= @book.published_year %></td>
+  </tr>
+</table>
 
 <p>
-  <strong>著者：</strong>
-  <%= @book.author %>
+  <%= link_to '編集', edit_book_path(@book), class: "btn btn-primary" %>
+  <%= link_to '一覧に戻る', books_path, class: "btn btn-secondary" %>
 </p>
-
-<p>
-  <strong>出版年：</strong>
-  <%= @book.published_year %>
-</p>
-
-<%= link_to 'Back', request.referer || '/' %>
