@@ -23,7 +23,7 @@ class BooksController < ApplicationController
       published_year: params[:book][:published_year]
     )
     if @book.save
-      redirect_to '/books', notice: "書籍を登録しました。"
+      redirect_to books_path, notice: "書籍を登録しました。"
     else
       flash.now[:alert] = "入力内容にエラーがあります。"
       render :new, status: :unprocessable_entity
@@ -43,7 +43,7 @@ class BooksController < ApplicationController
       author: params[:book][:author],
       published_year: params[:book][:published_year]
     )
-      redirect_to '/books', notice: "書籍を更新しました。"
+      redirect_to books_path, notice: "書籍を更新しました。"
     else
       flash.now[:alert] = "入力内容にエラーがあります。"
       render :edit, status: :unprocessable_entity
@@ -54,6 +54,6 @@ class BooksController < ApplicationController
   def destroy
     book = Book.find(params[:id])
     book.destroy
-    redirect_to '/books', notice: "書籍を削除しました。"
+    redirect_to books_path, notice: "書籍を削除しました。"
   end
 end

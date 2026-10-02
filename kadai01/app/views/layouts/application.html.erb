@@ -19,15 +19,26 @@
   </head>
 
   <body>
-    <div class="container">
-      <% if notice %>
-        <p class="flash flash-notice"><%= notice %></p>
-      <% end %>
-      <% if alert %>
-        <p class="flash flash-alert"><%= alert %></p>
-      <% end %>
+    <div id="container">
+      <div id="header">
+        <%= render "application/header" %>
+      </div>
+      <div id="sidebar">
+        <%= render "application/sidebar" %>
+      </div>
+      <div id="content">
+        <% if notice %>
+          <p class="flash flash-notice"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="flash flash-alert"><%= alert %></p>
+        <% end %>
 
-      <%= yield %>
+        <%= yield %>
+      </div>
+      <div id="footer">
+        <%= render "application/footer" %>
+      </div>
     </div>
   </body>
 </html>
