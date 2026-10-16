@@ -1,0 +1,21 @@
+<h1>ユーザ登録</h1>
+
+<% if @user.errors.any? %>
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with model: @user do |f| %>
+  <p>
+    <%= f.label :uid, 'ユーザID' %>
+    <%= f.text_field :uid %>
+  </p>
+  <p>
+    <%= f.label :pass, 'パスワード' %>
+    <%= f.password_field :pass %>
+  </p>
+  <%= f.submit '登録' %>
+<% end %>

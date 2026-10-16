@@ -1,0 +1,10 @@
+<h1>ユーザ一覧</h1>
+
+<% @users.each do |user| %>
+  <p>
+    <%= user.uid %>
+    <%= link_to '削除', user_path(user), data: { turbo_method: :delete } %>
+  </p>
+<% end %>
+
+<p><%= link_to 'ユーザ登録', new_user_path %></p>
