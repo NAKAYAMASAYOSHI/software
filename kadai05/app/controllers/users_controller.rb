@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       pass: BCrypt::Password.create(params[:user][:pass])
     )
     if @user.save
-      redirect_to users_path
+      redirect_to tweets_path
     else
       render :new, status: :unprocessable_entity
     end
