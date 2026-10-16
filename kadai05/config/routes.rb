@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :new, :create, :destroy]
   resources :tweets, only: [:index, :create, :destroy]
   resources :likes, only: [:create, :destroy]
+  get 'profile/edit', to: 'profiles#edit', as: :edit_profile
+  patch 'profile', to: 'profiles#update', as: :profile
   get 'top/main'
   post 'top/login'
   get 'top/logout'

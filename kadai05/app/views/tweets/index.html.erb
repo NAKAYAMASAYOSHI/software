@@ -2,6 +2,7 @@
 
 <% if session[:login_uid] %>
   <p>ログイン中：<%= session[:login_uid] %>
+    <%= link_to 'プロフィール編集', edit_profile_path %>
     <%= link_to 'ログアウト', top_logout_path %>
   </p>
 
@@ -20,7 +21,11 @@
 
 <% @tweets.each do |tweet| %>
   <p>
-    <strong><%= tweet.user.uid %></strong>：<%= tweet.message %>
+    <strong><%= tweet.user.uid %></strong>
+    <% if tweet.user.profile %>
+      （<%= tweet.user.profile.message %>）
+    <% end %>
+    ：<%= tweet.message %>
     （いいね <%= tweet.likes.count %>）
     <% if session[:login_uid] %>
       <% if tweet.like_users.exists?(uid: session[:login_uid]) %>
